@@ -3,9 +3,16 @@ package com.claudlexd07.workshopmongo.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="user") /* associa a classe com o Mongodb "não precisa do parenteses, apenas a notação, 
+ela já procura no mele da sua classe no Banco" com no nome em letra minuscula)*/
+
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@Id
 	private String id;
 	private String name;
 	private String email;
